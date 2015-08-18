@@ -1,0 +1,41 @@
+﻿@model CocktailGenetics.UI.Models.Admin.AdminIngredientsVM
+
+@{
+    ViewBag.Title = "Ingredients";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="admin-header">Add an ingredient</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="admin-form">
+        
+        <div class="admin-input-group">
+            <label class="admin-label">Name:</label> @Html.TextBoxFor(m => m.SelectedIngredients[0].Name, new { @class = "admin-input"})
+            <label class="admin-label short-label">Alcoholic?</label> @Html.CheckBoxFor(m => m.SelectedIngredients[0].IsLiquor, new { @class = "admin-input"})
+            <div class="left-val">@Html.ValidationMessageFor(m => m.SelectedIngredients[0].Name)</div>
+        </div>
+    
+        <div id="additional-ingredients"></div>
+        <div class="btn add-btn" id="add-ingredient-btn">Add another</div>
+    
+        <button class="btn submit-btn" type="submit">Submit</button>
+    </div>
+}
+
+@section scripts{
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script>
+        var numIngredients = 1;
+
+        $(function() {
+            $('#add-ingredient-btn').click(function() {
+                $.get('@Url.Action("AddNewIngredient", "Admin")/' + numIngredients, function(data) {
+                    $('#additional-ingredients').append(data);
+                });
+                numIngredients++;
+            });
+        });
+    </script>
+}

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CocktailGenetics-Web.config Connection String" description="CocktailGenetics Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:eq4vip2t8g.database.windows.net;Database=charleslabanowskiDB;User ID=charles.labanowski;Password=Pedrocalunqsod44;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Charles\\Desktop\\Github\\Charles\\CocktailGenetics\\CocktailGenetics\.UI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CocktailGenetics']/@connectionString" />
+  </parameter>
+</parameters>

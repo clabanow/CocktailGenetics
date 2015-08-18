@@ -1,0 +1,79 @@
+﻿@model CocktailGenetics.UI.Models.Admin.AdminCocktailsVM
+
+@{
+    ViewBag.Title = "Cocktails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="admin-header">Add a cocktail</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="admin-form">
+        <div class="admin-input-group">
+            <div>@Html.ValidationMessageFor(m => m.Name)</div>
+            <label class="admin-label">Cocktail Name:</label>
+            @Html.TextBoxFor(m => m.Name, new { @class = "admin-input" })
+        </div>
+
+        <div class="admin-input-group">
+            <div>@Html.ValidationMessageFor(m => m.ImgUrl)</div>
+            <label class="admin-label">Img Name:</label>
+            @Html.TextBoxFor(m => m.ImgUrl, new { @class = "admin-input" })
+        </div>
+
+        <div class="admin-input-group">
+            <h3 class="admin-subheader">Ingredients</h3>
+            <div class="val-group">
+                <div class="left-val">@Html.ValidationMessageFor(m => m.SelectedIngredients[0].Id)</div>
+                <div class="right-val">@Html.ValidationMessageFor(m => m.SelectedIngredients[0].Amount)</div>
+            </div>
+
+            <label class="admin-label">Name:</label>
+            @Html.DropDownListFor(m => m.SelectedIngredients[0].Id, Model.Ingredients, "Select an ingredient...", new { @class = "admin-input admin-select-list" })
+
+            <label class="admin-label short-label">Amount:</label>@Html.TextBoxFor(m => m.SelectedIngredients[0].Amount, new { @class = "admin-input" })
+            <div id="additional-ingredients"></div>
+            <div class="btn add-btn" id="add-ingredient">Add ingredient</div>
+        </div>
+
+        <div class="admin-input-group">
+            <h3 class="admin-subheader">Directions:</h3>
+
+            <div class="val-group"><div class="left-val">@Html.ValidationMessageFor(m => m.RecipeSteps[0].RecipeStepNumber)</div> <div class="right-val">@Html.ValidationMessageFor(m => m.RecipeSteps[0].Text)</div></div>
+            <label class="admin-label">Step #:</label>
+            @Html.DropDownListFor(m => m.RecipeSteps[0].RecipeStepNumber, Model.PossibleStepNumbers, "Select a step number...", new { @class = "admin-input admin-select-list" })
+
+            <label class="admin-label short-label">Text:</label>
+            @Html.TextBoxFor(m => m.RecipeSteps[0].Text, new { @class = "admin-input recipe-input" })
+            <div id="additional-recipe-steps"></div>
+            <div class="btn add-btn" id="add-recipe">Add recipe step</div>
+        </div>
+
+        <button class="btn submit-btn" type="submit">Submit</button>
+    </div>
+}
+
+@section scripts{
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        var numIngredients = 1;
+        var numRecipeSteps = 1;
+
+        $(function () {
+            $('#add-ingredient').click(function () {
+                $.get('@Url.Action("NewIngredientRow", "Admin")/' + numIngredients, function (data) {
+                    $('#additional-ingredients').append(data);
+                });
+                numIngredients++;
+            });
+
+            $('#add-recipe').click(function () {
+                $.get('@Url.Action("NewRecipeStepRow", "Admin")/' + numRecipeSteps, function (data) {
+                    $('#additional-recipe-steps').append(data);
+                });
+                numRecipeSteps++;
+            });
+        });
+    </script>
+}

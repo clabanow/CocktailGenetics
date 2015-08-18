@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="index" ng-controller="IndexCtrl">
+    <section id="ingredient-list">
+        <div class="wrapper" id="ingredient-list-wrapper">
+            <h2 id="ingredients-header">Choose your ingredients</h2>
+            <div id="ingredients">
+                <div ng-class="ingredient.Class" ng-repeat="ingredient in ingredients" ng-click="select(ingredient)">
+                    {{ ingredient.Name }}
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="selection-list">
+        <div class="wrapper" id="selected-ingredient-wrapper">
+            <h3 id="selection-header">Selected Ingredients:</h3>
+            <div id="selections">
+                <div ng-repeat="selectedIngredient in selectedIngredients" ng-click="unselect(selectedIngredient)">
+                    <div><span>{{ selectedIngredient.Name }}</span></div>
+                </div>
+            </div>
+        <div id="selection-bottom"></div>
+        </div>
+    </section>
+    
+    <section id="recipe-list">
+        <div class="wrapper">
+            <div id="results">
+                <div class="result" ng-repeat="result in recipes">
+                    <div class="result-name-wrapper" id="1">
+                        <img ng-src="{{result.ImgUrl}}" />
+                        <span class="result-name">{{ result.CocktailName }}</span>
+                    </div>
+                    <div class="result-ingredient-wrapper" id="2">
+                        <div ng-repeat="ingredientName in result.Ingredients">
+                            {{ ingredientName }}
+                        </div>
+                    </div>
+                    
+                    <!--default for all recipes; "Show Recipe" button must be clicked-->
+                    <div class="recipe-click-tag" ng-show="!showRecipe">
+                        <span ng-click="showRecipe = !showRecipe">Show Recipe</span>
+                    </div>
+                    
+                    <!--when the button is clicked, the following appears-->
+                    <div class="result-recipe-wrapper" ng-show="showRecipe" class="slide">
+                        <div ng-repeat="recipeStep in result.RecipeSteps">
+                            {{ recipeStep }}
+                        </div>
+                    </div>
+                    <div class="recipe-click-tag" ng-show="showRecipe">
+                        <span ng-click="showRecipe = !showRecipe">Hide Recipe</span>
+                    </div>
+                    
+                    <!--default for all recipes; "Show Recipe" button must be clicked-->
+                    @*<div class="recipe-click-tag" id="show-recipe-tag-{{result.CocktailName}}">
+                        <span slide-toggle="#recipe-{{result.CocktailName}}">Show Recipe</span>
+                    </div>*@
+
+                    <!--when the button is clicked, the following appears-->
+                    @*<div id="recipe-{{result.CocktailName}}">
+                        <div class="result-recipe-wrapper">
+                            <div ng-repeat="recipeStep in result.RecipeSteps">
+                                {{ recipeStep }}
+                            </div>
+                        </div>
+                        <div class="recipe-click-tag">
+                            <span slide-toggle="#show-recipe-tag-{{result.CocktailName}}">Hide Recipe</span>
+                        </div>
+                    </div>*@
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/index/indexModule.js"></script>
+    <script src="~/Scripts/index/indexFactory.js"></script>
+    <script src="~/Scripts/index/IndexCtrl.js"></script>
+}

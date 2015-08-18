@@ -1,0 +1,10 @@
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\bin\Debug\CocktailGenetics.Data.dll
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\bin\Debug\CocktailGenetics.Data.pdb
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\bin\Debug\CocktailGenetics.Models.dll
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\bin\Debug\Dapper.dll
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\bin\Debug\CocktailGenetics.Models.pdb
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\bin\Debug\Dapper.pdb
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\bin\Debug\Dapper.xml
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\obj\Debug\CocktailGenetics.Data.csprojResolveAssemblyReference.cache
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\obj\Debug\CocktailGenetics.Data.dll
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Data\obj\Debug\CocktailGenetics.Data.pdb

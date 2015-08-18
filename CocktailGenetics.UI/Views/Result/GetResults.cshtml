@@ -1,0 +1,19 @@
+﻿@model CocktailGenetics.UI.Models.Result.ResultGetResultsViewModel
+
+@{
+    ViewBag.Title = "GetResults";
+}
+
+<h2>Here are your results:</h2>
+
+@foreach (var result in Model.Cocktails)
+{
+    <div>Name: @result.Name</div>
+    <div>Link: @result.RecipeLink</div>
+    <ul>
+        @foreach (var ingredient in result.Ingredients)
+        {
+            <li>@ingredient</li>
+        }
+    </ul>
+}

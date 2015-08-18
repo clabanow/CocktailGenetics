@@ -1,0 +1,34 @@
+﻿@using System.Web.Script.Services
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/reset.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif|Lobster|Istok+Web|Open+Sans|Roboto' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="~/Content/img/cocktailfavicon.ico"/>
+</head>
+    <body>
+        <div id="wrap">
+            <nav>
+                <img src="~/Content/img/cocktailicon.png"/>
+                <span>Cocktail Genetics</span>
+            </nav>
+            <div id="main">
+                @RenderBody()
+            </div>
+        </div>
+        
+        <footer id="footer">
+            <div id="footer-text">&copy; 2014 Labanowski</div>
+        </footer>
+        
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

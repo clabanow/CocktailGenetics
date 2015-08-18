@@ -1,0 +1,5 @@
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Models\bin\Release\CocktailGenetics.Models.dll
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Models\bin\Release\CocktailGenetics.Models.pdb
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Models\obj\Release\CocktailGenetics.Models.csprojResolveAssemblyReference.cache
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Models\obj\Release\CocktailGenetics.Models.dll
+C:\Users\Charles\Desktop\Github\Charles\CocktailGenetics\CocktailGenetics.Models\obj\Release\CocktailGenetics.Models.pdb

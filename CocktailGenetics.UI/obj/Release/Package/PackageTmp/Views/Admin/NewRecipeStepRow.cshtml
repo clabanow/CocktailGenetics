@@ -1,0 +1,20 @@
+﻿@model CocktailGenetics.UI.Models.Admin.AdminAddRecipeStep
+<div>
+    <div class="val-group">
+        <div class="left-val"><span class="field-validation-valid" data-valmsg-for="@Model.StepNumberName" data-valmsg-replace="true"></span></div>
+        <div class="right-val"><span class="field-validation-valid" data-valmsg-for="@Model.DescriptionName" data-valmsg-replace="true"></span></div>
+    </div>
+
+
+    <label class="admin-label">Step #:</label>
+    <select id="@Model.StepNumberId" name="@Model.StepNumberName" data-val="true" data-val-required="You must enter a step number" class="admin-input admin-select-list">
+        <option value="">Select a step number...</option>
+        @for (var i = 0; i < 11; i++)
+        {
+            <option value="@i">@i</option>
+        }
+    </select>
+
+    <label class="admin-label short-label">Text:</label>
+    <input id="@Model.DescriptionId" name="@Model.DescriptionName" data-val="true" data-val-required="You must describe the step" type="text"  class="admin-input recipe-input"/>
+</div>

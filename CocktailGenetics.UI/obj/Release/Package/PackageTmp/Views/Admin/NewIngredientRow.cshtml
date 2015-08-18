@@ -1,0 +1,22 @@
+﻿@model CocktailGenetics.UI.Models.Admin.AdminAddIngredient
+
+<div>
+    
+    <div class="val-group">
+        <div class="left-val"><span class="field-validation-valid" data-valmsg-for="@Model.NameNameTag" data-valmsg-replace="true"></span></div>
+        <div class="right-val"><span class="field-validation-valid" data-valmsg-for="@Model.AmountNameTag" data-valmsg-replace="true"></span></div>
+    </div>
+
+
+    <label class="admin-label">Name:</label>
+    <select id="@Model.NameIdTag" name="@Model.NameNameTag" class="admin-input admin-select-list" data-val="true" data-val-required="You must select an ingredient">
+        <option value="">Select an ingredient...</option>
+        @foreach (var option in @Model.Ingredients)
+        {
+            <option value="@option.Value">@option.Text</option>
+        }
+    </select>
+    
+    <label class="admin-label short-label">Amount:</label>
+    <input id="@Model.AmountIdTag" name="@Model.AmountNameTag" data-val="true" data-val-required="You must enter an amount" type="text" value="" class="admin-input"/>
+</div>
